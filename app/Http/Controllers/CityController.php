@@ -4,18 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class CityController extends Controller
 {
-    public function index()
+    public function show()
     {
-        $categories = [
-            ['name' => 'Flats', 'total_kos' => '1,304'],
-            ['name' => 'Villas', 'total_kos' => '1,304'],
-            ['name' => 'Hotel', 'total_kos' => '1,304'],
-            ['name' => 'Apartments', 'total_kos' => '1,304'],
-            ['name' => 'Buildings', 'total_kos' => '1,304'],
-        ];
-
         $boardingHouses = [
             [
                 'name' => 'Tumbuh Tentram Berada Rumah Nenek',
@@ -51,15 +43,6 @@ class HomeController extends Controller
             ],
         ];
 
-        $cities = [
-            ['name' => 'Bogor', 'total_kos' => '1,304'],
-            ['name' => 'Jakarta', 'total_kos' => '2,156'],
-            ['name' => 'Bandung', 'total_kos' => '1,890'],
-            ['name' => 'Bali', 'total_kos' => '1,542'],
-            ['name' => 'Surabaya', 'total_kos' => '1,203'],
-            ['name' => 'Surabaya', 'total_kos' => '1,203'],
-        ];
-
-        return view('pages.home', compact('categories', 'boardingHouses', 'cities'));
+        return view('pages.city.show', compact('boardingHouses'));
     }
 }
